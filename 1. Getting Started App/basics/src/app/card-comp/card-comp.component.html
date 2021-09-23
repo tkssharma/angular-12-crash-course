@@ -1,0 +1,18 @@
+<div class="container mt-40">
+  <input type="text" class="form-control mb-40" id="exampleInputPassword1" />
+  <div class="flex-container">
+    <div *ngFor="let product of products" class="card" style="width: 18rem">
+      <img src="{{ product.image }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <button (click)="UserClicked(product)" class="btn btn-primary">
+          Go somewhere
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
