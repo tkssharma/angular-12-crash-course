@@ -1,5 +1,9 @@
 <div>
   <p (click)="handleClick(40)">event-comp works!</p>
   <p (click)="handelEvent($event)">event-comp works!</p>
-   <input type="text" (input)="handleInput($event)" />
+  <input type="text" (input)="handleInput($event)" />
+
+  <app-user-profile *ngFor="let user of users" [user]="user">
+    <div>{{ user.email }}</div>
+  </app-user-profile>
 </div>

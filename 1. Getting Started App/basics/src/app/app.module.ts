@@ -8,10 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CardCompComponent } from './card-comp/card-comp.component';
 import { AsyncPipePipe } from './async-pipe.pipe';
 import { HeaderDirectiveDirective } from './header-directive.directive';
 import { EventCompComponent } from './event-comp/event-comp.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TodoAppComponent } from './todo-app/todo-app.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +22,11 @@ import { EventCompComponent } from './event-comp/event-comp.component';
     RegisterComponent,
     HeaderComponent,
     FooterComponent,
-    CardCompComponent,
     AsyncPipePipe,
     HeaderDirectiveDirective,
-    EventCompComponent
+    EventCompComponent,
+    UserProfileComponent,
+    TodoAppComponent
   ],
   imports: [
     BrowserModule,

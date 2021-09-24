@@ -1,0 +1,20 @@
+<p>todo-app works!</p>
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Todo Task</label>
+      <input
+        [(ngModel)]="todotask"
+        type="text"
+        name="todotask"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      {{ todotask }}
+    </div>
+    <button (click)="submitForm()" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</div>
