@@ -1,0 +1,12 @@
+<div>
+    <app-cockpit (serverCreated)="onServerAdded($event)">
+    </app-cockpit> 
+
+    <app-server-element
+    *ngFor="let serverElement of serverElement"
+     [srvElement]="serverElement"
+     [name] = "serverElement.name">
+    >
+    </app-server-element>
+
+</div>
