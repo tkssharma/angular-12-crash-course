@@ -1,0 +1,85 @@
+<div class="form-container container jumbotron">
+  <form class="container" (ngSubmit)="onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label for="name">FirstName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstname"
+        #firstname="ngModel"
+        required
+        minlength="3"
+        maxlength="15"
+        [(ngModel)]="model.firstname"
+        name="firstname"
+      />
+      <div class="error" *ngIf="userForm.submitted && firstname.errors">
+        <span *ngIf="firstname.errors?.required">enter name value</span>
+        <span *ngIf="firstname.errors?.minlength"
+          >enter name with min-length 3</span
+        >
+        <span *ngIf="firstname.errors?.maxlength"
+          >enter name with max-length 15</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="lastname"
+        #lastname="ngModel"
+        required
+        minlength="3"
+        maxlength="15"
+        [(ngModel)]="model.lastname"
+        name="lastname"
+      />
+      <div class="error" *ngIf="userForm.submitted && lastname.errors">
+        <span *ngIf="lastname.errors?.required">enter name value</span>
+        <span *ngIf="lastname.errors?.minlength"
+          >enter name with min-length 3</span
+        >
+        <span *ngIf="lastname.errors?.maxlength"
+          >enter name with max-length 15</span
+        >
+      </div>
+    </div>
+
+    <div>
+      <label for="mail">User Email</label>
+      <input
+        type="email"
+        name="mail"
+        id="mail"
+        [(ngModel)]="model.mail"
+        #mail="ngModel"
+        required
+        email
+      />
+      <div class="error" *ngIf="userForm.submitted && mail.errors">
+        <span *ngIf="mail.errors?.required">email is required</span>
+        <span *ngIf="mail.errors?.email">enter valid email</span>
+      </div>
+    </div>
+
+    <div>
+      <label for="mail">User Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        [(ngModel)]="model.password"
+        #password="ngModel"
+        required
+      />
+      <div class="error" *ngIf="userForm.submitted && password.errors">
+        <span *ngIf="password.errors?.required">password is required</span>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
