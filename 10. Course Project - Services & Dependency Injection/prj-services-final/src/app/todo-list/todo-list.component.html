@@ -1,0 +1,6 @@
+<div class="container">
+  <app-post-form (createPost)="createPostData($event)"></app-post-form>
+  <div *ngFor="let post of posts">
+    <app-post-list-item (deletePost)="deletePostAction($event)" [post]="post"></app-post-list-item>
+  </div>
+</div>

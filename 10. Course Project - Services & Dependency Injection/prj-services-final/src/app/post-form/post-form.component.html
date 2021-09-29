@@ -1,0 +1,54 @@
+<div class="form-container container jumbotron">
+  <form class="container" (ngSubmit)="onSubmit()" #postForm="ngForm">
+    <div class="form-group">
+      <label for="name">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        #title="ngModel"
+        required
+        minlength="3"
+        maxlength="15"
+        [(ngModel)]="post.title"
+        name="title"
+      />
+      <div class="error" *ngIf="postForm.submitted && title.errors">
+        <span *ngIf="title.errors?.required">enter name value</span>
+        <span *ngIf="title.errors?.minlength"
+          >enter title with min-length 3</span
+        >
+        <span *ngIf="title.errors?.maxlength"
+          >enter title with max-length 15</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        #description="ngModel"
+        required
+        minlength="50"
+        maxlength="1500"
+        [(ngModel)]="post.description"
+        name="description"
+      />
+      <div class="error" *ngIf="postForm.submitted && description.errors">
+        <span *ngIf="description.errors?.required"
+          >enter description value</span
+        >
+        <span *ngIf="description.errors?.minlength"
+          >enter description with min-length 50</span
+        >
+        <span *ngIf="description.errors?.maxlength"
+          >enter description with max-length 15</span
+        >
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
