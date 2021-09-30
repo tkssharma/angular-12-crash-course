@@ -1,1 +1,50 @@
-<h3>Yay, I'm home!</h3>
+<h3>Yay, I'm home! <span appName></span></h3>
+
+<li *ngIf="enabled"></li>
+<div>
+  <h1>Uppercase Pipe</h1>
+  <b>{{ title | uppercase }}</b
+  ><br />
+  <h1>Lowercase Pipe</h1>
+  <b>{{ title | lowercase }}</b>
+
+  <h1>Date pipe</h1>  
+  <b>{{todaydate | date:'d/M/y'}}</b><br/>  
+  <b>{{todaydate | date:'shortTime'}}</b>  
+</div>
+<ul *ngFor="let person of peoples">
+  <li *ngIf="person.country === 'UK'" class="text-success">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'USA'" class="text-primary">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'HK'" class="text-danger">
+    {{ person.name }} ({{ person.country }})
+  </li>
+  <li
+    *ngIf="
+      person.country !== 'HK' &&
+      person.country !== 'UK' &&
+      person.country !== 'USA'
+    "
+    class="text-warning"
+  >
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<ul *ngFor="let person of peoples" [ngSwitch]="person.country">
+  <li *ngSwitchCase="'UK'" class="text-success">
+    {{ person.name }} ({{ person.country | lowercase }})
+  </li>
+  <li *ngSwitchCase="'USA'" class="text-primary">
+    {{ person.name }} ({{ person.country | lowercase }})
+  </li>
+  <li *ngSwitchCase="'HK'" class="text-danger">
+    {{ person.name }} ({{ person.country | lowercase }})
+  </li>
+  <li *ngSwitchDefault class="text-warning">
+    {{ person.name }} ({{ person.country | lowercase }})
+  </li>
+</ul>
